@@ -1,5 +1,6 @@
 package com.minhduc;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,8 +29,14 @@ import java.util.List;
  * Follow up: Recursive solution is trivial, could you do it iteratively?
  */
 public class Solution {
+    List<Integer> list = new ArrayList<>();
     public List<Integer> inorderTraversal(TreeNode root) {
-
-        return null;
+        if(root == null) {
+            return list;
+        }
+        inorderTraversal(root.left);
+        list.add(root.val);
+        inorderTraversal(root.right);
+        return list;
     }
 }
