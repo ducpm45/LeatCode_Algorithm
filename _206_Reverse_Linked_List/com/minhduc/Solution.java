@@ -52,7 +52,7 @@ public class Solution {
         if(head == null || head.next == null) return head;
 
         ListNode currentNode = head;
-        ListNode nextNode = null;
+        ListNode nextNode;
         while(currentNode.next != null) {
             nextNode = currentNode.next;
             currentNode.next = nextNode.next;
